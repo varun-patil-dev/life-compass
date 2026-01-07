@@ -11,6 +11,8 @@ import {
   Circle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LiveTimeHeader from "@/components/LiveTimeHeader";
+import EventCalendar from "@/components/EventCalendar";
 
 interface Goal {
   id: string;
@@ -80,11 +82,16 @@ export default function Planning() {
         </div>
       </nav>
 
-      <main className="pt-24 pb-16 px-6">
-        <div className="max-w-5xl mx-auto">
+      {/* Live Time Header */}
+      <div className="pt-[73px]">
+        <LiveTimeHeader />
+      </div>
+
+      <main className="pt-8 pb-16 px-6">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div 
-            className="mb-12"
+            className="mb-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -95,6 +102,16 @@ export default function Planning() {
             <p className="text-lg text-muted-foreground">
               Step back from daily execution. See the bigger picture.
             </p>
+          </motion.div>
+
+          {/* Calendar Section */}
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+          >
+            <EventCalendar />
           </motion.div>
 
           {/* Weekly Section */}
