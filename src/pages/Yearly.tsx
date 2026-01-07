@@ -12,6 +12,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LiveTimeHeader from "@/components/LiveTimeHeader";
 
 interface YearlyGoal {
   id: string;
@@ -113,7 +114,12 @@ export default function Yearly() {
         </div>
       </nav>
 
-      <main className="pt-24 pb-16 px-6">
+      {/* Live Time Header */}
+      <div className="pt-[73px]">
+        <LiveTimeHeader />
+      </div>
+
+      <main className="pt-8 pb-16 px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <motion.div 
